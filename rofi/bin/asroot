@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+DIR="$HOME/.config/bspwm"
+rofi_cmd="rofi -theme $DIR/rofi/themes/asroot.rasi"
+
+# Apps
+terminal=" Xfce4-Terminal"
+files=" Thunar"
+editor=" Geany"
+clifm=" Ranger"
+nvim=" Nvim"
+
+# Variable passed to rofi
+options="$terminal\n$files\n$editor\n$clifm\n$nvim"
+term='xfce4-terminal'
+
+# Functions
+
+chosen="$(echo -e "$options" | $rofi_cmd -p "Run apps as root" -dmenu -selected-row 0)"
+case $chosen in
+    $terminal)
+        bsproot "$term"
+        ;;
+    $files)
+        bsproot 'dbus-run-session thunar'
+        ;;
+    $editor)
+        bsproot geany
+        ;;
+    $clifm)
+        bsproot "$term -e ranger"
+        ;;
+    $vim)
+        bsproot "$term -e nvim"
+        ;;
+esac

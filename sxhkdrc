@@ -1,0 +1,155 @@
+## Keybindings config
+
+##---------- Keybindings for bspwm ----------##
+
+# Terminal (alacritty)
+super + Return
+	xfce4-terminal 
+
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi App Launcher
+alt + F1
+	sh ~/.config/bspwm/rofi/bin/launcher
+
+# Rofi Network Menu
+super + shift + n
+	nmd
+
+# Rofi Menus/Applets
+super + {w,x,r}
+	sh ~/.config/bspwm/rofi/bin/{windows,powermenu,asroot}
+
+##---------- Applications ----------##
+
+# Gui Apps
+super + shift + {t,b,x,s,w,d}
+	{thunar,brave,xnconvert,stacer,nitrogen,edex-ui}
+
+# Cli Apps
+ctrl + alt + {e,r,h,m,p,n,c}
+	xfce4-terminal -e {lvim,ranger,htop,cmus,pipes,ncmatrix,calc}
+
+# Pulse Audio
+super + p
+	xfce4-terminal -e pulsemixer
+
+# Pulse Audio Equalizer
+super + e 
+  pulseaudio-equalizer-gtk
+
+# Lockscreen
+F9
+	betterlockscreen --lock && notify-send 'System Unlocked'
+
+# Update System
+super + u
+	xfce4-terminal -e 'yay -Syyu'
+
+##---------- System Keys ----------##
+
+# Take a screenshot
+Print 
+	scrot -d 0 -q 100 -e 'mv $f ~/Pictures/Screenshots' && notify-send 'ScreenShot Saved'
+
+# Volume +10
+F3
+	pactl set-sink-volume @DEFAULT_SINK@ +10% && notify-send 'Volume +10%'
+
+# Volume -10
+F2
+	pactl set-sink-volume @DEFAULT_SINK@ -10% && notify-send 'Volume -10%'
+
+# Volume Toggle
+F1
+	pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send 'Volume Toggled'
+
+# Increase Brightness
+F12
+	xbacklight -inc 10 && notify-send 'Brightness Increased'
+
+# Decrease Brightness
+F11
+	xbacklight -dec 10 && notify-send 'Brightness Decreased'
+
+
+##---------- Bspwm ----------##
+
+# Close App
+super + q
+	xdo close
+
+# Reload Keybindings
+super + Escape
+	pkill -USR1 -x sxhkd && notify-send 'Sxhkd Reloaded'
+
+# kill window
+ctrl + alt + Escape
+    xkill
+
+# Quit/Restart bspwm
+ctrl + shift + {r}
+	bspc {wm -r}
+	
+# Split horizontal, vertical or cancel
+super + {h,v,q}
+	bspc node -p {east,south,cancel}
+
+# Preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# Fullscreen or Monocle
+super + f
+#	bspc desktop -l next
+    bspc node -t "~"fullscreen
+
+# Toggle beetwen floating & tiled
+super + space
+    bspc node -t "~"{floating,tiled}
+
+# Pseudo Tiled & tiled mode
+super + shift + space
+#super + {p,t}
+    bspc node -t "~"{pseudo_tiled,tiled}
+
+# Set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Change focus to next window, including floating window
+alt + {_,shift + }Tab
+	bspc node -f {next.local,prev.local}
+
+# Switch workspace
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+# Switch to last opened workspace
+super + {Tab,grave}
+	bspc {node,desktop} -f last
+
+# Send focused window to another workspace
+super + {_,shift + }{1-8}
+	bspc {desktop -f,node -d} '^{1-8}'
+
+# Expanding windows
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+## Shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+## Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Hide/Unhide Window
+super + n
+	bspwinmask		
+
