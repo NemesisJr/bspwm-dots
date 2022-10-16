@@ -32,7 +32,7 @@ ctrl + alt + {e,r,h,m,p,n,c}
 
 # Pulse Audio
 super + p
-	xfce4-terminal -e pulsemixer
+	pavucontrol
 
 # Pulse Audio Equalizer
 super + e 
