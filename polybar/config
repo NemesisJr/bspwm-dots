@@ -61,7 +61,7 @@ tray-transparent = true
 tray-background = ${color.BLACK}
 tray-offset-x = 0
 tray-offset-y = 0
-tray-padding = 1
+tray-padding = 0
 tray-scale = 2.0
 
 wm-restack = bspwm
