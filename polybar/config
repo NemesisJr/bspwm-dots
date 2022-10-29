@@ -18,8 +18,8 @@ fixed-center = true
 
 width = 100%
 height = 22
-offset-x = 2
-offset-y = 2
+offset-x = 0
+offset-y = 0
 
 background = ${color.BACKGROUND}
 foreground = ${color.FOREGROUND}
@@ -33,7 +33,7 @@ line-color = ${color.RED}
 border-size = 0
 border-color = ${color.BLACK}
 
-padding = 1
+padding = 0
 module-margin-left = 0
 module-margin-right =0
 
@@ -49,20 +49,20 @@ modules-right = cpu sep volume sep backlight sep network sep battery sep
 separator = 
 spacing = 0
 
-dim-value = 0.5
+dim-value = 0
 
 wm-name = bspwm
 locale = 
 
 tray-position = right
-tray-detached = false
+tray-detached = true
 tray-maxsize = 16
 tray-transparent = true
 tray-background = ${color.BLACK}
 tray-offset-x = 0
 tray-offset-y = 0
 tray-padding = 0
-tray-scale = 2.0
+tray-scale = 1.0
 
 wm-restack = bspwm
 
