@@ -92,7 +92,7 @@ type = custom/text
 content = " CYBERSNAKE"
 content-prefix = 
 content-prefix-font = 4
-content-prefix-foreground = ${color.BLUE}
+content-prefix-foreground = ${color.RED}
 content-padding = 0
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
