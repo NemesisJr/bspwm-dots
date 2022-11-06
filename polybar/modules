@@ -304,7 +304,7 @@ label = %time%
 type = internal/network
 interface = ${system.sys_network_interface}
 
-interval = 30
+interval = 5
 
 ;;ping-interval = 3
 ;;udspeed-minwidth = 5
