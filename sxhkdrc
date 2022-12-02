@@ -23,12 +23,12 @@ super + {w,x,r}
 ##---------- Applications ----------##
 
 # Gui Apps
-super + shift + {t,b,x,s,w,d}
-	{thunar,brave,xnconvert,stacer,nitrogen,edex-ui}
+super + shift + {t,b,x,s,w}
+	{thunar,brave,xnconvert,stacer,nitrogen}
 
 # Cli Apps
-ctrl + alt + {e,r,h,m,p,n,c}
-	xfce4-terminal -e {lvim,ranger,htop,cmus,pipes,ncmatrix,calc}
+ctrl + alt + {e,r,h,m,c,n}
+	xfce4-terminal -e {lvim,ranger,htop,cmus,calcurse}
 
 # Pulse Audio
 super + p
