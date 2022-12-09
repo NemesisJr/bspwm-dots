@@ -29,6 +29,10 @@ super + shift + {t,b,x,s,w}
 # Cli Apps
 ctrl + alt + {e,r,h,m,c,n}
 	xfce4-terminal -e {lvim,ranger,htop,cmus,calcurse}
+	
+ctrl + alt + {e,r,h,m,c}
+	xfce4-terminal -e {lvim,ranger,glances,cmus,,calc}
+
 
 # Pulse Audio
 super + p
