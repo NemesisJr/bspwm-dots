@@ -43,7 +43,7 @@ font-2 = "google\-mdi:size=12;3"
 font-3 = "Iosevka:style=bold:"size=12;3"
 
 modules-left = mod sep bspwm 
-modules-center = date sep bna
+modules-center =times sep date sep bna
 modules-right = cpu sep volume sep backlight sep network sep battery sep
 
 separator = 
