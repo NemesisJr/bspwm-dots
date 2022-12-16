@@ -1,6 +1,6 @@
 [module/times]
 type = custom/script
-exec = TZ=Africa/Casablanca date +"Morocco: %H:%M:%S"
+exec = TZ=Africa/Casablanca date +"  %H:%M:%S"
 interval = 1
 
 [module/ipkg]
